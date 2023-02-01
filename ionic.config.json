@@ -1,0 +1,7 @@
+{
+  "name": "componentes-erick",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="/"></ion-back-button>
+      </ion-buttons>       
+    </ion-buttons>
+    <ion-title>Proveedores</ion-title>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Buscar Proveedor" (ionChange)="searchProveedor($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-text-center">
+    <ion-card *ngFor="let p of busqueda">
+      <ion-card-title class="ion-text-center">{{p.nombre}}</ion-card-title>
+      <ion-card-subtitle>Documento: {{p.tipoDocumento}}</ion-card-subtitle>
+      <ion-card-subtitle>#Documento: {{p.numDocumento}}</ion-card-subtitle>
+      <ion-card-subtitle>Dirección: {{p.direccion}}</ion-card-subtitle>
+      <ion-card-subtitle>Telefono: {{p.telefono}}</ion-card-subtitle>
+      <ion-card-subtitle>Email: {{p.email}}</ion-card-subtitle>
+    </ion-card>
+  </ion-list>
+</ion-content>

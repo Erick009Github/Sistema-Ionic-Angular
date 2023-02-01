@@ -1,0 +1,15 @@
+<ion-header collapse="fade" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/tab1">
+        <ion-back-button text="" defaultHref="/"></ion-back-button>
+        <!--<ion-icon slot="start" name="arrow-back-outline"></ion-icon>-->      
+      </ion-button>      
+    </ion-buttons>
+    <ion-title>Alerta</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  <ion-button expand="full" color="warning" (click)="presentarAlerta()">Mostrar Alerta</ion-button>
+</ion-content>

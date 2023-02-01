@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="/"></ion-back-button>
+      </ion-buttons>       
+    </ion-buttons>
+    <ion-title>Lista de alimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-text-center">
+    <ion-card *ngFor="let dato of datos">
+      <img [alt]="dato.strCategory" [src]="dato.strCategoryThumb"/>
+      <ion-card-title class="ion-text-center">{{dato.strCategory}}</ion-card-title>
+      <ion-card-content>
+        {{dato.strCategoryDescription}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

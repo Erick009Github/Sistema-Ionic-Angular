@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="/"></ion-back-button>
+      </ion-buttons>       
+    </ion-buttons>
+    <ion-title>Artículos</ion-title>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Buscar Artículo" (ionChange)="searchArticulo($event)"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-text-center">
+    <ion-card *ngFor="let a of busqueda">
+      <ion-card-title class="ion-text-center">{{a.nombre}}</ion-card-title>
+      <ion-card-subtitle>Código: {{a.codigo}}</ion-card-subtitle>
+      <ion-card-subtitle>Descripción: {{a.descripcion}}</ion-card-subtitle>
+      <ion-card-subtitle>Categoría: {{a.idcategoriaNavigation.nombre}}</ion-card-subtitle>
+      <ion-card-subtitle>Precio: {{a.precioVenta}}</ion-card-subtitle>
+      <ion-card-subtitle>Stock: {{a.stock}}</ion-card-subtitle>
+      <div *ngIf="a.condicion">
+        <ion-card-subtitle>Estado: 
+          <ion-text color="primary">
+          Activo
+        </ion-text>
+        </ion-card-subtitle>
+      </div>
+      <div *ngIf="!a.condicion">
+        <ion-card-subtitle>Estado:
+          <ion-text color="danger">
+            Inactivo
+          </ion-text>
+        </ion-card-subtitle>
+      </div>
+    </ion-card>
+  </ion-list>
+</ion-content>

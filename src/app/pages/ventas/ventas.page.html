@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="/"></ion-back-button>
+      </ion-buttons>       
+    </ion-buttons>
+    <ion-title>Ventas</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Buscar por cliente" (ionChange)="searchVentas($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-list class="ion-text-center">
+    <ion-card *ngFor= "let v of busqueda">
+      <ion-card-title class="ion-text-center">{{v.idclienteNavigation.nombre}}</ion-card-title>
+      <ion-card-subtitle>Comprobante: {{v.tipoComprobante}}</ion-card-subtitle>
+      <ion-card-subtitle>Serie Comprobante: {{v.serieComprobante}}</ion-card-subtitle>
+      <ion-card-subtitle>#Comprobante: {{v.numComprobante}}</ion-card-subtitle>
+      <ion-card-subtitle>Fecha: {{v.fechaHora}}</ion-card-subtitle>
+      <ion-card-subtitle>Impuesto: {{v.impuesto}}</ion-card-subtitle>
+      <ion-card-subtitle>Total: ${{v.total}}</ion-card-subtitle>
+      <div *ngIf="v.estado">
+        <ion-card-subtitle>Estado: 
+          <ion-text color="primary">
+          Aceptado
+        </ion-text>
+        </ion-card-subtitle>
+      </div>
+      <div *ngIf="!v.estado">
+        <ion-card-subtitle>Estado:
+          <ion-text color="danger">
+            Anulado
+          </ion-text>
+        </ion-card-subtitle>
+      </div>
+    </ion-card>
+  </ion-list>
+</ion-content>
