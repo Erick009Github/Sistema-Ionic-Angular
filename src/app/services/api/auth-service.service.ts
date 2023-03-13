@@ -10,7 +10,7 @@ import { Iresponse } from 'src/app/models/iresponse';
 
 export class AuthServiceService {
 
-  url = 'http://localhost:8090/'
+  url = 'http://localhost:8070/'
 
   constructor(private http: HttpClient,
     private router:Router) { }

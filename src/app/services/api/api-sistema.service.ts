@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class ApiSistemaService {
 
-  url = 'http://localhost:8090/'
+  url = 'http://localhost:8070/'
 
   constructor(private http: HttpClient,
               private router:Router) {}
